@@ -1,6 +1,6 @@
 ## We define two functions:
 ## 1. makeCacheMatrix, which effectively creates 
-## a 'makeCacheMatrix' object from a matrix object, 
+## a makeCacheMatrix object from a matrix object, 
 ## which will encapsulate this original matrix 
 ## together with its inverse
 
@@ -14,20 +14,18 @@
 
 ## So, the first function creates an object 
 ## in which are embedded:
-## 1. an original matrix 'x'
+## 1. the original matrix 'x'
 ## 2. its inverse 'i'
 ## These two matrices are not directly accessible 
 ## or modifiable, but are accessed and modified through 
-## the corresponding get and set functions 
-## (which enable us to perform some checks, if needed, 
-## before values are retrieved or changes are accepted), 
+## the corresponding get and set functions, 
 ## and the makeCacheMatrix object is effectively 
 ## constructed as a list of these functions
 
 makeCacheMatrix <- function(x = matrix()) {
     
     ## There are basically two embedded entities inside a makeCacheMatrix object:
-    ## 1. an original matrix, 'x'
+    ## 1. the original matrix, 'x'
     ## 2. the inverse of this matrix, 'i'
     
     ## When a makeCacheMatrix object is constructed for the first time, 
@@ -35,7 +33,7 @@ makeCacheMatrix <- function(x = matrix()) {
     ## As for the inverse, we set the default value of the inverse to be NULL
     i <- NULL 
     
-    ## We define a 'set' function, which enables us:
+    ## We define a set function, which enables us:
     ## 1. to set the embedded matrix inside the makeCacheMatrix object to be equal 
     ## to some given matrix, which is passed as the argument to this function
     ## 2. to set the cached value of the inverse to be NULL
